@@ -1,6 +1,7 @@
 #include "Rectangle2D.h"
 #include <cmath>
 
+// no arg constructor
 Rectangle2D::Rectangle2D()
 {
 	x = 0;
@@ -8,6 +9,8 @@ Rectangle2D::Rectangle2D()
 	width = 1;
 	height = 1;
 }
+
+// constructor overload +1
 Rectangle2D::Rectangle2D(double X, double Y, double Width, double Height)
 {
 	x = X;
@@ -16,6 +19,7 @@ Rectangle2D::Rectangle2D(double X, double Y, double Width, double Height)
 	height = Height;
 }
 
+// all these get functions return variables and equation results
 double Rectangle2D::getX() const { return x; }
 
 double Rectangle2D::getY() const { return y; }
@@ -28,7 +32,7 @@ double Rectangle2D::getArea() const { return width*height; }
 
 double Rectangle2D::getPerimeter() const { return (2*width + 2*height); }
 
-
+// these functions set the variables after initialization
 bool Rectangle2D::setX(double X) { x = X; return false; }
 
 bool Rectangle2D::setY(double Y) { y = Y; return false; }
@@ -37,6 +41,7 @@ bool Rectangle2D::setWidth(double Width) { width = Width; return false; }
 
 bool Rectangle2D::setHeight(double Height) { height = Height; return false; }
 
+//These functions test for combinations of rectangles and points
 bool Rectangle2D::contains(double X, double Y) const
 {
 	double rightEdge = x + width / 2;
@@ -50,6 +55,7 @@ bool Rectangle2D::contains(double X, double Y) const
 	else { return false; }
 }
 
+// this function overloads the contains() function
 bool Rectangle2D::contains(const Rectangle2D &r) const
 {
 	double rightEdge = x + width / 2;
