@@ -39,5 +39,6 @@ int main()
 		}
 	}
 	cout << "Number of ints greater than average: " << count << endl;
+	delete myArray;
 	return 0;
 }
